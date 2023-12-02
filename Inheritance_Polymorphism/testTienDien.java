@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class testTienDien {
-
+    
     static Scanner sc = new Scanner(System.in);
     public static void nhapKHVN(ArrayList <TienDien> tiendien){
        KHVietNam t1 = new KHVietNam();
