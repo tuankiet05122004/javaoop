@@ -22,29 +22,30 @@ class PhoneBook extends Iphone {
 
     @Override
     void insertIphone(String name, String numberphone) {
-        Phone p = find(name);
-        if (p != null) {
-
-            p.setNumberphone(p.getNumberphone() + ":" + numberphone);
-            System.out.println("abc");
-        } else {
-            Phone newP = new Phone(name, numberphone);
-            Phonelist.add(newP);
-            System.out.println("213");
-        }
-//        Phone p = new Phone(name, numberphone);
-//        if (Phonelist.size() <= 0) {
-//            Phonelist.add(p);
+//        Phone p = find(name);
+//        if (p != null) {
+//
+//            p.setNumberphone(p.getNumberphone() + ":" + numberphone);
+//            System.out.println("abc");
 //        } else {
-//            for (Phone phone : Phonelist) {
-//                if (phone.getName().equalsIgnoreCase(p.getName())) {
-//                    phone.setNumberphone(phone.getNumberphone() + ":" + numberphone);
-//                    break;
-//                } else {
-//                    Phonelist.add(p);
-//                }
-//            }
+//            Phone newP = new Phone(name, numberphone);
+//            Phonelist.add(newP);
+//            System.out.println("213");
 //        }
+        Phone p = new Phone(name, numberphone);
+        if (Phonelist.size() <= 0) {
+            Phonelist.add(p);
+        } else {
+            for (Phone phone : Phonelist) {
+                if (phone.getName().equalsIgnoreCase(p.getName())) {
+                    phone.setNumberphone(phone.getNumberphone() + ":" + numberphone);
+                    break;
+                } else {
+                    Phonelist.add(p);
+                    break;
+                }
+            }
+        }
 //        
 
     }
@@ -60,9 +61,10 @@ class PhoneBook extends Iphone {
 
     @Override
     void removePhone(String name) {
-        for (Phone phone : Phonelist) {
-            if (phone.getNumberphone().equalsIgnoreCase(name)) {
-                Phonelist.remove(phone);
+        for (int i = 0; i < Phonelist.size(); i++) {
+            if (Phonelist.get(i).getName().equalsIgnoreCase(name)) {
+                Phonelist.remove(i);
+                i--;
             }
         }
     }

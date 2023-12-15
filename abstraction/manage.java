@@ -15,8 +15,14 @@ public class manage {
             System.out.println("5. sort");
             System.out.println("6. exit");
             int n;
-            System.out.println("Enter you choose");
-            n = Integer.parseInt(sc.nextLine());
+            while (true) {
+                try {
+                    System.out.println("Enter you choose");
+                    n = Integer.parseInt(sc.nextLine());
+                    break;
+                } catch (Exception e) {
+                }
+            }
             switch (n) {
                 case 1: {
                     Phone phone = new Phone();

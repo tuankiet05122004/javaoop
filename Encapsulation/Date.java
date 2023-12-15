@@ -5,6 +5,10 @@ public class Date {
     private int moth;
     private int year;
 
+    public Date() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     private boolean check(int day, int month, int year) {
         if (year < 9999 && year > 1990) {
             if (moth == 1 || moth == 3 || moth == 5 || moth == 7 || moth == 8 || moth == 10 || moth == 12) {
